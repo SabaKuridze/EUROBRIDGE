@@ -1,0 +1,115 @@
+nav{
+    width: 100%;
+    color: #fff;
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+.logo{
+    height: 120px;
+    width: 120px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+li:hover{
+    color: skyblue;
+    cursor: pointer;
+}
+.dark-nav{
+    transition: 0.5s;
+}
+.nav-scrolled{
+    background: #212EA0;
+}
+
+.menu-icon{
+    display: none;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.visible{
+    display: block;
+    animation-name: visible;
+    animation-duration: 1s;
+}
+
+@keyframes visible {
+    0% {right: -300px;}
+    100% {right: 0;}
+}
+
+.hide{
+    right: -300px;
+    animation-name: hide;
+    animation-duration: 1s;
+}
+
+@keyframes hide {
+    0% {right: 0;}
+    100% {right: -300px;}
+}
+
+@media (max-width: 1000px){
+    .logo{
+        width: 140px;
+    }
+    nav ul li{
+        margin: 10px 15px;
+    }
+}
+@media (max-width: 840px){
+    nav{
+        padding: 15px 0;
+    }
+    nav ul{
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0px;
+        bottom: 0;
+        background: #212EA0;
+        z-index: -1;
+        width: 200px;
+        padding-top: 70px;
+        transition: 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px 40px;
+    }
+    .menu-icon{
+        display: inline-block;
+        width: 30px;
+        cursor: pointer;
+    }
+    .hide-mobile-menu{
+        right: -200px;
+    }
+}
